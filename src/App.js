@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 const apiUrl = 'https://picsum.photos/v2/list?page=2&limit=100';
 
 function App() {
   const [imageData, setImageData] = useState([]);
   const [page, setPage] = useState(1);
-  const imagesPerPage = 10; // Number of images to load per page
-  const totalImagesLimit = 30; // Total number of images to load
+  const imagesPerPage = 10; 
+  const totalImagesLimit = 30; 
 
   useEffect(() => {
     fetchImages();
@@ -18,7 +18,7 @@ function App() {
   async function fetchImages() {
     try {
       if (imageData.length >= totalImagesLimit) {
-        return; // Stop fetching once we reach the limit
+        return; 
       }
 
       const response = await fetch(apiUrl);
